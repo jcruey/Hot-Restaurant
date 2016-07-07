@@ -1,9 +1,17 @@
+// ===============================================================================
+// DATA
+// Below data will hold all of the waitlist tables.
+// Initially we just set it equal to a "dummy" customer. 
+// But you could have it be an empty array as well.
+// ===============================================================================
+
+
 var waitingArray = [
 	{
-		customerName: "Luke",
-		customerEmail: "skywalker@gmail.com",
-		phoneNumber: "904-555-1234",
-		customerID: "RockinTheForce"
+		customerName: "Saima",
+		customerEmail: "saima@gmail.com",
+		phoneNumber: "979-587-0887",
+		customerID: "saimacool"
 	}
 ];
 

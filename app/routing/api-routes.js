@@ -1,8 +1,11 @@
+// ===============================================================================
+// LOAD DATA
+// We are linking our routes to a series of "data" sources. 
+// These data sources hold arrays of information on table-data, waitinglist, etc.
+// ===============================================================================
+
 var tableData 		= require('../data/table-data.js');
 var waitListData 	= require('../data/waitinglist-data.js');
-var path 			= require('path');
-var bodyParser = require('body-parser');
-
 
 
 
@@ -11,11 +14,6 @@ var bodyParser = require('body-parser');
 // ===============================================================================
 
 module.exports = function(app){
-
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({extended: true}));
-	app.use(bodyParser.text());
-	app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 	// API GET Requests
 	// Below code handles when users "visit" a page. 
@@ -40,7 +38,6 @@ module.exports = function(app){
 	// ---------------------------------------------------------------------------
 
 	app.post('/api/tables', function(req, res){
-		console.log(req);
 
 		// Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
 		// It will do this by sending out the value "true" have a table 

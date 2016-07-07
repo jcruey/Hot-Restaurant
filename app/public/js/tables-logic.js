@@ -27,8 +27,14 @@ window.onload = function() {
 
 					// Create the HTML Well (Section) and Add the table content for each reserved table
 					var tableSection = $("<div>");
+					var delBtn = $('<button>');
+					delBtn.attr('type', 'button');
+					delBtn.attr('class', 'btn btn-default pull-right deleteBtn');
+					delBtn.append('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>')
+					delBtn.attr('data-value', i+1);
 					tableSection.addClass('well');
 					tableSection.attr('id', 'tableWell-' + i+1)
+					tableSection.append(delBtn);
 					$('#tableSection').append(tableSection);
 
 					var tableNumber = i + 1;
@@ -37,6 +43,10 @@ window.onload = function() {
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
 					$("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerID + "</h2>");
 				}
+				$(document).on('click', '.deleteBtn', function () {
+					var idx = $(this).attr("data-value")
+					$("#tableWell-0"+idx).remove();
+				})
 			});
 	}
 
